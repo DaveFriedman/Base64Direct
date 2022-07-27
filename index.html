@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Base64 Direct</h1>
+    <blockquote>
+        Base64 Direct is a utility that decodes base64 text to ASCII text. If
+        the base64 text is encoded more than once, it will keep trying, up to 9
+        times.<br>
+        The <code>Show!</code> button displays the step-by-step results of the
+        decoding.<br>
+        The <code>Go!</code> button <strong>sends your browser directly</strong>
+        to the decoded text.
+    </blockquote>
+
+    <form>
+        <textarea id="encoded" placeholder="base64 string here" required></textarea>
+        <input type="submit" id="showBtn" value="Show!">
+        <input type="submit" id="goBtn" value="Go!">
+    </form>
+    <p></p>
+
+    <div id="showDiv">
+    </div>
+
+    <script src="base64direct.js"></script>
+</body>
+
+<footer>
+    <a href="go.html">Base64 Direct <em>Go</em></a><br>
+    made by <a href="https://DaveFriedman.github.com">Dave</a>
+</footer>
+</html>
