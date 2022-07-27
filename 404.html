@@ -22,12 +22,12 @@
 
     <script>
         url = window.location.href
-        // console.log(url);
-        domain = "Base64Direct";
+        console.log(url);
+        domain = "base64direct";
         index = url.search(domain);
-        // console.log(index);
+        console.log(index);
         str = url.slice(index+domain.length+1);
-        // console.log(str);
+        console.log(str);
 
         function decode(str) {
             const a = [];
