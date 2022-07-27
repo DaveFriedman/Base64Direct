@@ -42,10 +42,12 @@
                 console.log(a[i]);
             }
             console.log("Error: No url found in 9 base64 decodings.")
-            location.assign(a.pop());
+            return(a);
         };
 
-        decode(str);
+        a = decode(str);
+        location.assign(a.pop());
+
     </script>
 </body>
 
