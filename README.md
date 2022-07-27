@@ -17,7 +17,6 @@ For example: <code>https://www.google.com</code> in base64 is
 
 If you put <code>aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==</code> at the end of
 this site's url (<code>https://davefriedman.github.io/base64direct/go/</code>),
-you get <code><a
-href="https://davefriedman.github.io/base64direct/go/aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==">https://davefriedman.github.io/base64direct/go/aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==</a></code>
+you get <code>https://davefriedman.github.io/base64direct/go/aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==</a></code>
 
 This will take you to <code>https://www.google.com</code>.

@@ -20,17 +20,32 @@
         This will take you to <code>https://www.google.com</code>.
     </blockquote>
 
-    <!-- <script src="base64direct.js"></script> -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var url_string = window.location.href;
-            var url = new URL(url_string);
-            str = url.href
-            position = str.search("/go/")
-            console.log(str);
-            console.log(str.slice(position));
+        url = window.location.href
+        // console.log(url);
+        domain = "Base64Direct";
+        index = url.search(domain);
+        // console.log(index);
+        str = url.slice(index+domain.length+1);
+        // console.log(str);
 
-         });
+        function decode(str) {
+            const a = [];
+            for (let i=0; i<9; i++) {
+                a.push(str);
+                try {
+                    window.atob(str);
+                } catch (e) {
+                    return(a);
+                }
+                str = decodeURIComponent(escape(window.atob(str)));
+                console.log(a[i]);
+            }
+            console.log("Error: No url found in 9 base64 decodings.")
+            location.assign(a.pop());
+        };
+
+        decode(str);
     </script>
 </body>
 
