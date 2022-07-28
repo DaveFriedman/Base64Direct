@@ -34,18 +34,9 @@
         </p>
     </blockquote>
 
-    <script src="base64direct.js"></script>
-    <script>
-        url = window.location.href;
-        // appname = "Base64Direct"; For local testing
-        appname = "base64direct";
-        index = url.search(appname);
-        str = url.slice(index+appname.length+1);
-
-        a = decode(str);
-        location.assign(a.pop());
-        // console.log(`redirect to: ${a.pop()}`); For local testing
-    </script>
+    <div id="showDiv">
+    </div>
+    <p></p>
 </body>
 
 <footer>
@@ -59,4 +50,22 @@
         Source
     </a>
 </footer>
+
+<script src="base64direct.js"></script>
+<script>
+    url = window.location.href;
+    // appname = "Base64Direct"; // For local testing
+    appname = "base64direct";
+    index = url.search(appname);
+    str = url.slice(index+appname.length+1);
+
+    a = decode(str);
+    location.assign(a.pop());
+    // console.log(`redirect to: ${a.pop()}`); // For local testing
+    showDiv = document.getElementById("showDiv");
+    showDiv.insertAdjacentHTML("beforeend",
+        `<button onClick="location.href='.'" type="button">
+            Error: Too many (10+) base64 decodings. Return to Base64 Direct.
+        </button>`);
+</script>
 </html>
