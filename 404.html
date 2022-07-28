@@ -62,6 +62,8 @@
     a = decode(str);
     location.assign(a.pop());
     // console.log(`redirect to: ${a.pop()}`); // For local testing
+
+    // Only shows if decode() fails to find a url
     showDiv = document.getElementById("showDiv");
     showDiv.insertAdjacentHTML("beforeend",
         `<button onClick="location.href='.'" type="button">

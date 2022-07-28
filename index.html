@@ -34,11 +34,9 @@
         </p>
     </blockquote>
 
-    <form method="dialog">
-        <textarea id="encoded" placeholder="base64 string here" autofocus required></textarea>
-        <button onSubmit="show" id="showBtn" value="Show!">Show!</button>
-        <button onSubmit="go" id="goBtn" value="Go!">Go!</button>
-    </form>
+    <textarea id="b64box" placeholder="base64 string here" autofocus required></textarea>
+    <button id="showBtn" value="Show!">Show!</button>
+    <button id="goBtn" value="Go!">Go!</button>
     <p></p>
 
     <div id="showDiv">
@@ -59,7 +57,7 @@
 
 <script src="base64direct.js"></script>
 <script>
-    document.getElementById("showBtn").addEventListener("click", show, true);
-    document.getElementById("goBtn").addEventListener("click", go, true);
+    document.getElementById("showBtn").addEventListener("click", show);
+    document.getElementById("goBtn").addEventListener("click", go);
 </script>
 </html>

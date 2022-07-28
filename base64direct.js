@@ -1,11 +1,12 @@
 // On click, get base64 string, decode to ASCII, assume result is a url,
 // send browser to url.
-function go(event) {
-    var str = document.getElementById("encoded").value;
-    console.log(str);
-    a = decode(str);
+function go() {
+    var b64box = document.getElementById("b64box");
 
-    location.assign(a.pop());
+    if (b64box.reportValidity() === true) {
+        a = decode(b64box.value);
+        location.assign(a.pop());
+    }
 
     return false;
 };
@@ -13,17 +14,20 @@ function go(event) {
 
 // On click, get base64 string, decode to ASCII, show intial string, all
 // subsequent strings, and final, linkified ASCII result.
-function show(event) {
-    var str = document.getElementById("encoded").value;
-    a = decode(str);
+function show() {
+    var b64box = document.getElementById("b64box");
 
-    showDiv = document.getElementById("showDiv");
-    showDiv.innerHTML = "";
-    for (let i=0; i<(a.length-1); i++) {
-        showDiv.insertAdjacentHTML("beforeend", `<p>${a[i]}</p>`);
+    if (b64box.reportValidity() === true) {
+        a = decode(b64box.value);
+
+        showDiv = document.getElementById("showDiv");
+        showDiv.innerHTML = "";
+        for (let i=0; i<(a.length-1); i++) {
+            showDiv.insertAdjacentHTML("beforeend", `<p>${a[i]}</p>`);
+        }
+        url = a.pop();
+        showDiv.insertAdjacentHTML("beforeend", `<p><a href="${url}">${url}</a></p>`);
     }
-    url = a.pop();
-    showDiv.insertAdjacentHTML("beforeend", `<p><a href="${url}">${url}</a></p>`);
 
     return false;
 };
