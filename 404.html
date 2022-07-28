@@ -54,20 +54,19 @@
 <script src="base64direct.js"></script>
 <script>
     url = window.location.href;
-    // appname = "Base64Direct"; // For local testing
-    appname = "base64direct";
+    appname = "Base64Direct"; // Uncomment in for local testing
+    // appname = "base64direct"; // Comment out for local testing
     index = url.search(appname);
     str = url.slice(index+appname.length+1);
-
     a = decode(str);
-    location.assign(a.pop());
-    // console.log(`redirect to: ${a.pop()}`); // For local testing
+    console.log(`redirect to: ${a.pop()}`); // Uncomment in for local testing
+    // location.assign(a.pop()); // Comment out for local testing
 
     // Only shows if decode() fails to find a url
     showDiv = document.getElementById("showDiv");
     showDiv.insertAdjacentHTML("beforeend",
-        `<button onClick="location.href='.'" type="button">
-            Error: Too many (10+) base64 decodings. Return to Base64 Direct.
+        `<button onClick="location.href='.'" type="button" style="background:#BF616A;">
+            Error: Too many (10+) base64 decodings. Return to Base64 Direct homepage.
         </button>`);
 </script>
 </html>
