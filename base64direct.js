@@ -1,7 +1,3 @@
-document.getElementById("goBtn").addEventListener("click", go);
-document.getElementById("showBtn").addEventListener("click", show);
-
-
 // On click, get base64 string, decode to ASCII, assume result is a url,
 // send browser to url.
 function go(event) {
@@ -31,7 +27,8 @@ function show(event) {
     event.preventDefault();
 };
 
-
+// Take a string, check if it's base64, decode if so, repeat until b64 check
+// fails or 9 attempts, return an array of all decodings.
 function decode(str) {
     const a = [];
     for (let i=0; i<9; i++) {
@@ -44,6 +41,6 @@ function decode(str) {
         str = decodeURIComponent(escape(window.atob(str)));
         console.log(a[i]);
     }
-    console.log("Error: No url found in 9 base64 decodings.")
+    console.log("Error: Too many (10+) base64 decodings.")
     return(a);
 };
