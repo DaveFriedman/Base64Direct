@@ -2,11 +2,12 @@
 // send browser to url.
 function go(event) {
     var str = document.getElementById("encoded").value;
+    console.log(str);
     a = decode(str);
 
     location.assign(a.pop());
 
-    event.preventDefault();
+    return false;
 };
 
 
@@ -24,7 +25,7 @@ function show(event) {
     url = a.pop();
     showDiv.insertAdjacentHTML("beforeend", `<p><a href="${url}">${url}</a></p>`);
 
-    event.preventDefault();
+    return false;
 };
 
 // Take a string, check if it's base64, decode if so, repeat until b64 check

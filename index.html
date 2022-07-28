@@ -8,7 +8,8 @@
     <h1>Base64 Direct</h1>
     <blockquote>
         <p>
-            Base64 Direct is a utility that decodes base64 text to ASCII text.<br>
+            Base64 Direct is a utility that decodes base64 text to ASCII text.
+            <br>
             If the base64 text is encoded more than once, it will keep trying,
             up to 9 times.
         </p>
@@ -21,19 +22,22 @@
         <p>
             If you know your base64 text is a valid URL, put the base64 text
             after this site's url to go directly to the base64 URL.<br>
-            For example: <br>
+            For example:<br>
             <code>https://www.google.com</code> in base64 is
-            <code>aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ</code>.
+            <code>aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ</code>.<br>
             Paste the base64 after this site's url to go to
             <code>https://www.google.com</code>.<br>
-            Like so: <code><a href="https://davefriedman.github.io/base64direct/aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ">https://davefriedman.github.io/base64direct/aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ</a></code>
+            Like so: <code><a
+            href="https://davefriedman.github.io/base64direct/aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ">
+                https://davefriedman.github.io/base64direct/aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ
+            </a></code>
         </p>
     </blockquote>
 
-    <form>
-        <textarea id="encoded" placeholder="base64 string here" required></textarea>
-        <input type="submit" id="showBtn" value="Show!">
-        <input type="submit" id="goBtn" value="Go!">
+    <form method="dialog">
+        <textarea id="encoded" placeholder="base64 string here" autofocus required></textarea>
+        <button onSubmit="show" id="showBtn" value="Show!">Show!</button>
+        <button onSubmit="go" id="goBtn" value="Go!">Go!</button>
     </form>
     <p></p>
 
@@ -42,8 +46,8 @@
 
     <script src="base64direct.js"></script>
     <script>
-        document.getElementById("goBtn").addEventListener("click", go);
-        document.getElementById("showBtn").addEventListener("click", show);
+        document.getElementById("showBtn").addEventListener("click", show, true);
+        document.getElementById("goBtn").addEventListener("click", go, true);
     </script>
 </body>
 
