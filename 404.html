@@ -54,13 +54,13 @@
 <script src="base64direct.js"></script>
 <script>
     url = window.location.href;
-    appname = "Base64Direct"; // Uncomment in for local testing
-    // appname = "base64direct"; // Comment out for local testing
+    // appname = "Base64Direct"; // Uncomment in for local testing
+    appname = "base64direct"; // Comment out for local testing
     index = url.search(appname);
     str = url.slice(index+appname.length+1);
     a = decode(str);
-    console.log(`redirect to: ${a.pop()}`); // Uncomment in for local testing
-    // location.assign(a.pop()); // Comment out for local testing
+    // console.log(`redirect to: ${a.pop()}`); // Uncomment in for local testing
+    location.assign(a.pop()); // Comment out for local testing
 
     // Only shows if decode() fails to find a url
     showDiv = document.getElementById("showDiv");
